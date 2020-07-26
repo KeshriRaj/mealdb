@@ -17,7 +17,7 @@ namespace InternationalKitchen.Repository
 
         public bool AddMealData(Request.AddMealRequest data);
 
-        public bool DeleteMeal(Request.DeleteMealRequest data);
+        public bool DeleteMeal(int data);
 
         public MealByIdDTO GetMealById(Request.AddMealIdRequest data);
 

@@ -99,15 +99,15 @@ namespace InternationalKitchen.Repository
             
         }
 
-        public bool DeleteMeal(DeleteMealRequest request)
+        public bool DeleteMeal(int request)
         {
-            if(request!=null)
+            if(request>0)
             {
-                Requirements DeleteRequirements = _db.Requirements.Where(a => a.MealsId == request.MealId).FirstOrDefault();
+                Requirements DeleteRequirements = _db.Requirements.Where(a => a.MealsId == request).FirstOrDefault();
                 _db.Requirements.Remove(DeleteRequirements);
                 _db.SaveChanges();
 
-                Meals DeleteMeal = _db.Meals.Where(a => a.Id == request.MealId).FirstOrDefault();
+                Meals DeleteMeal = _db.Meals.Where(a => a.Id == request).FirstOrDefault();
                 _db.Meals.Remove(DeleteMeal);
                 _db.SaveChanges();
                

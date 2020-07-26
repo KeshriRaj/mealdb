@@ -53,7 +53,7 @@ namespace InternationalKitchen.Controllers
 
         [HttpDelete("DeleteMeal")]
 
-        public IActionResult DeleteMeal(Request.DeleteMealRequest data)
+        public IActionResult DeleteMeal(int data)
         {
             return Ok(repository.DeleteMeal(data));
         }
