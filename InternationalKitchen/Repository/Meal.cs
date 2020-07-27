@@ -295,6 +295,21 @@ namespace InternationalKitchen.Repository
         {
             return _db.FAQ.ToList();
         }
+
+        public bool FetchIngredients(AddIngredients data)
+        {
+            if(data!=null)
+            {
+                Ingredients ingredients = new Ingredients();
+                ingredients.MainComponent = data.ingredientsName;
+                ingredients.MainImage = data.ingredientsImage;
+                _db.Ingredients.Add(ingredients);
+                _db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
     }
 
    

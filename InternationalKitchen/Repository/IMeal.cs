@@ -36,5 +36,6 @@ namespace InternationalKitchen.Repository
         public List<MealsData> GetAllMeals();
 
         public List<FrequentlyAskedQuestion> Faqs();
+        public bool FetchIngredients(Request.AddIngredients data);
     }
 }

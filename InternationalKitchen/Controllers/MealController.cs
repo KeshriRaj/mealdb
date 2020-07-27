@@ -120,7 +120,13 @@ namespace InternationalKitchen.Controllers
         {
             return Ok(repository.Faqs());
         }
-
+        [HttpPost("FetchIngredientsId")]
+        
+        public IActionResult FetchIngredientsId(Request.AddIngredients data)
+        {
+            return Ok(repository.FetchIngredients(data));
+        }
+   
 
     }
 
